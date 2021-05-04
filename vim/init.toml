@@ -1,0 +1,139 @@
+#=============================================================================
+# SpaceVim Config
+#=============================================================================
+
+# All SpaceVim option below [option] section
+[options]
+    # set spacevim theme. by default colorscheme layer is not loaded,
+    # if you want to use more colorscheme, please load the colorscheme
+    # layer
+    colorscheme = "palenight"
+    colorscheme_bg = "dark"
+    # Disable guicolors in basic mode, many terminal do not support 24bit true colors
+    enable_guicolors = true
+    # Disable statusline separator, if you want to use other value, please install nerd fonts
+    statusline_separator = "arrow"
+    statusline_iseparator = "arrow"
+    buffer_index_type = 4
+    enable_tabline_filetype_icon = true
+    enable_statusline_mode = false
+    default_indent = 4
+    expand_tab = false
+	disabled_plugins = ['deoplete.nvim']
+	project_rooter_automatically = false
+	lint_engine = 'ale'
+	bootstrap_after = "myspacevim#after"
+
+# Enable autocomplete layer
+# Use coc.nvim autocomplete engine.
+[[layers]]
+name = 'autocomplete'
+auto_completion_return_key_behavior = 'complete'
+auto_completion_tab_key_behavior = 'smart'
+autocomplete_method = 'coc'
+
+# Enable shell layer
+[[layers]]
+name = 'shell'
+default_position = 'top'
+default_height = 30
+
+# Enable fzf Fuzzy Finder layer
+[[layers]]
+name = 'fzf'
+
+# Enable git layer, using fugitive plugin
+[[layers]]
+name = 'git' 
+git_plugin = 'fugitive'
+
+# Enable linting checkers engine
+[[layers]]
+name = "checkers"
+lint_on_the_fly = true
+show_cursor_error = true
+
+# Enable default Version Control layer
+[[layers]]
+name = 'VersionControl'
+
+# Enable gtags layer, using ctags
+[[layers]]
+name = "gtags"
+gtagslabel = "ctags"
+
+# Enable colorscheme layer, additional vim colours
+[[layers]]
+name = 'colorscheme'
+
+# Enable lang#php layer for PHP utilities
+[[layers]]
+name = "lang#php"
+
+# Enable lang#javascript layer for Javascript utilities
+[[layers]]
+name = "lang#javascript"
+
+# Enable lang#ruby layer for Ruby utilities
+[[layers]]
+name = "lang#ruby"
+
+# Enable lang#html layer for HTML utilities
+[[layers]]
+name = "lang#html"
+
+# Enable lang#toml layer for toml utilities
+[[layers]]
+name = "lang#toml"
+
+# Enable lang#vue layer for Vue utilities
+[[layers]]
+name = "lang#vue"
+
+# Enable lang#xml layer for XML utilities
+[[layers]]
+name = "lang#xml"
+
+# Enable Language Server Protocol layer
+# for the enabled filetypes
+[[layers]]
+name = 'lsp'
+filetypes = [
+	'css',
+	#'html',
+	#'javascript',
+	'php',
+	'ruby',
+	'sh',
+	#'vue'
+]
+
+# Install Vimproc plugin, required by SpaceVim
+[[custom_plugins]]
+name = 'Shougo/vimproc.vim'
+merged = 0
+
+# Install Coc.nvim plugin, for autocompletion
+[[custom_plugins]]
+name = 'neoclide/coc.nvim'
+merged = 0
+
+# Install vim-auto-save plugin, auto save on normal mode
+[[custom_plugins]]
+name = '907th/vim-auto-save'
+merged = 0
+
+# Install fzf.vim plugin, Fuzzy Finder
+[[custom_plugins]]
+name = 'junegunn/fzf.vim'
+merged = 0
+
+# Install vim-smoothie plugin, Smooth Scrolling
+[[custom_plugins]]
+name = 'psliwka/vim-smoothie'
+merged = 0
+
+# Install vista.vim plugin, Used mainly for tags navigation
+[[custom_plugins]]
+name = 'liuchengxu/vista.vim'
+merged = 0
