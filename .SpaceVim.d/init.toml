@@ -15,17 +15,40 @@
     # Statusline Separator
     statusline_separator = "arrow"
     statusline_iseparator = "arrow"
+
+	# Set SpaceVim buffer index style
+    # 0: 1 ➛ ➊
+    # 1: 1 ➛ ➀
+    # 2: 1 ➛ ⓵
+    # 3: 1 ➛ ¹
+    # 4: 1 ➛ 1
     buffer_index_type = 4
+
+	# Tabline file icons
     enable_tabline_filetype_icon = true
-    enable_statusline_mode = false
+
+	# Display mode in statusline
+    enable_statusline_mode = true
+
+	# Indent Options
 	default_indent = 4
 	expand_tab = false
+
+	# Disable plugin, incompatible with coc.nvim
 	disabled_plugins = ['deoplete.nvim']
+
+	# Disable guessing project root
 	project_rooter_automatically = false
+
+	# Use ale as lint engine
 	lint_engine = 'ale'
+
+	# Use nerdtree as file manager
+	filemanager = 'nerdtree'
+
+	# Bootstrap additional options
 	bootstrap_before = 'myspacevim#before'
 	bootstrap_after = 'myspacevim#after'
-	filemanager = 'nerdtree'
 
 # Show hidden files in filetree
 [[layers]]
