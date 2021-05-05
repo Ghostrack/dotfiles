@@ -2,16 +2,17 @@
 # SpaceVim Config
 #=============================================================================
 
-# All SpaceVim option below [option] section
+# Global SpaceVim options
 [options]
-    # set spacevim theme. by default colorscheme layer is not loaded,
-    # if you want to use more colorscheme, please load the colorscheme
-    # layer
+
+    # Colorscheme
     colorscheme = "palenight"
     colorscheme_bg = "dark"
+
     # Disable guicolors in basic mode, many terminal do not support 24bit true colors
     enable_guicolors = true
-    # Disable statusline separator, if you want to use other value, please install nerd fonts
+
+    # Statusline Separator
     statusline_separator = "arrow"
     statusline_iseparator = "arrow"
     buffer_index_type = 4
@@ -26,6 +27,7 @@
 	bootstrap_after = 'myspacevim#after'
 	filemanager = 'nerdtree'
 
+# Show hidden files in filetree
 [[layers]]
 name = 'core'
 filetree_show_hidden = true
@@ -147,4 +149,9 @@ merged = 0
 # Install vista.vim plugin, Used mainly for tags navigation
 [[custom_plugins]]
 name = 'liuchengxu/vista.vim'
+merged = 0
+
+# Install vim-devicons.vim plugin, Filetype Icons
+[[custom_plugins]]
+name = 'ryanoasis/vim-devicons'
 merged = 0
