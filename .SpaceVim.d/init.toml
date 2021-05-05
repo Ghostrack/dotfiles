@@ -17,12 +17,18 @@
     buffer_index_type = 4
     enable_tabline_filetype_icon = true
     enable_statusline_mode = false
-    default_indent = 4
-    expand_tab = false
+	default_indent = 4
+	expand_tab = false
 	disabled_plugins = ['deoplete.nvim']
 	project_rooter_automatically = false
 	lint_engine = 'ale'
-	bootstrap_after = "myspacevim#after"
+	bootstrap_before = 'myspacevim#before'
+	bootstrap_after = 'myspacevim#after'
+	filemanager = 'nerdtree'
+
+[[layers]]
+name = 'core'
+filetree_show_hidden = true
 
 # Enable autocomplete layer
 # Use coc.nvim autocomplete engine.
@@ -58,9 +64,9 @@ show_cursor_error = true
 name = 'VersionControl'
 
 # Enable gtags layer, using ctags
-[[layers]]
-name = "gtags"
-gtagslabel = "ctags"
+#[[layers]]
+#name = "gtags"
+#gtagslabel = "ctags"
 
 # Enable colorscheme layer, additional vim colours
 [[layers]]
@@ -126,6 +132,11 @@ merged = 0
 # Install fzf.vim plugin, Fuzzy Finder
 [[custom_plugins]]
 name = 'junegunn/fzf.vim'
+merged = 0
+
+# Install fzf-preview.vim plugin, Has a good project file search
+[[custom_plugins]]
+name = 'yuki-yano/fzf-preview.vim'
 merged = 0
 
 # Install vim-smoothie plugin, Smooth Scrolling
