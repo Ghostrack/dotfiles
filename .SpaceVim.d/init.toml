@@ -105,6 +105,10 @@ name = "lang#php"
 [[layers]]
 name = "lang#javascript"
 
+# Enable lang#typescript layer for Typescript utilities
+[[layers]]
+name = "lang#typescript"
+
 # Enable lang#ruby layer for Ruby utilities
 [[layers]]
 name = "lang#ruby"
@@ -130,7 +134,7 @@ name = "lang#xml"
 [[layers]]
 name = 'lsp'
 filetypes = [
-	'css',
+	# 'css',
 	#'html',
 	#'javascript',
 	'php',
@@ -177,4 +181,9 @@ merged = 0
 # Install vim-devicons.vim plugin, Filetype Icons
 [[custom_plugins]]
 name = 'ryanoasis/vim-devicons'
+merged = 0
+
+# Install vim-jsx-pretty plugin, Syntaxt Highlighting for React JSX
+[[custom_plugins]]
+name = 'MaxMEllon/vim-jsx-pretty'
 merged = 0
