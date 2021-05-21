@@ -6,6 +6,8 @@ function! myspacevim#after() abort
 	set ignorecase
 	set smartcase
 	set mouse=
+	set undofile " Maintain undo history between sessions
+	set undodir=~/.vim/undodir
 
 	let g:ale_disable_lsp = 1
 	let g:auto_save = 1
@@ -20,6 +22,8 @@ function! myspacevim#after() abort
 				\ "phpactor.enable": 1,
 				\ "phpactor.path": "/home/fran/phpactor/bin/phpactor",
 				\})
+
+	command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
 
 	" Check if NERDTree is open or active
 	function! IsNERDTreeOpen()
