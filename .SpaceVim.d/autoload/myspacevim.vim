@@ -8,9 +8,16 @@ function! myspacevim#after() abort
 	set mouse=
 	set undofile " Maintain undo history between sessions
 	set undodir=~/.vim/undodir
+	set nocompatible
 
 	let g:ale_disable_lsp = 1
 	let g:auto_save = 1
+	let g:ale_fix_on_save = 1
+	let g:ale_fixers = {
+\		'*': ['remove_trailing_lines', 'trim_whitespace'],
+\		'javascript': ['eslint'],
+\		'vue': ['eslint'],
+\	}
 
 	nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 	nmap <silent> <C-j> <Plug>(ale_next_wrap)
@@ -24,22 +31,5 @@ function! myspacevim#after() abort
 				\})
 
 	command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
-
-	" Check if NERDTree is open or active
-	function! IsNERDTreeOpen()
-		return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-	endfunction
-
-	" Call NERDTreeFind if NERDTree is active, current window contains a modifiable
-	" file, and we're not in vimdiff
-	function! SyncTree()
-		if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
-			NERDTreeFind
-			wincmd p
-		endif
-	endfunction
-
-	" Highlight currently open buffer in NERDTree
-	autocmd BufRead * call SyncTree()
 
 endfunction 
