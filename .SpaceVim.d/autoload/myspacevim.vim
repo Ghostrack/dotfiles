@@ -12,7 +12,6 @@ function! myspacevim#after() abort
 
 	let g:ale_disable_lsp = 1
 	let g:auto_save = 1
-	let g:ale_fix_on_save = 1
 	let g:ale_fixers = {
 \		'*': ['remove_trailing_lines', 'trim_whitespace'],
 \		'javascript': ['eslint'],
@@ -32,4 +31,4 @@ function! myspacevim#after() abort
 
 	command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
 
-endfunction 
+endfunction

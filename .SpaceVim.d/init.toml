@@ -135,12 +135,12 @@ name = "lang#xml"
 name = 'lsp'
 filetypes = [
 	# 'css',
-	#'html',
-	#'javascript',
+	# 'html',
+	# 'javascript',
 	'php',
-	'ruby',
+	# 'ruby',
 	'sh',
-	#'vue'
+	# 'vue'
 ]
 
 # Install Vimproc plugin, required by SpaceVim
