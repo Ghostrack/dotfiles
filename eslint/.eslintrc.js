@@ -1,60 +1,53 @@
 module.exports = {
 	globals: {
-		_        : true,
-		axios    : true,
-		require  : true,
-		moment   : true,
-		process  : true,
-		Vue      : true,
-		path     : true,
-		$        : true,
-		module   : true,
-		__dirname: true
+		__dirname   : true,
+		AppVariables: true,
+		Backbone    : true,
+		module      : true
 	},
 	extends: [
-		'eslint:all',
-		'plugin:vue/essential',
-		'plugin:vue/recommended',
-		'plugin:vue/strongly-recommended',
-		'./.eslintdarwin.js',
-		'./.eslintoverride.js'
+		"eslint:all",
+		"plugin:vue/essential",
+		"plugin:vue/recommended",
+		"plugin:vue/strongly-recommended",
+		"./.eslintbase.js"
 	],
 	overrides: [
 		{
-			files        : ['*.vue'],
-			parser       : 'vue-eslint-parser',
+			files        : ["*.vue"],
+			parser       : "vue-eslint-parser",
 			parserOptions: {
-				parser             : '@typescript-eslint/parser',
-				tsconfigRootDir    : __dirname,
-				project            : ['./tsconfig.json'],
-				extraFileExtensions: ['.vue']
+				parser             : "@typescript-eslint/parser",
+				tsconfigRootDir    : `${__dirname}/scripts`,
+				project            : ["./tsconfig.json"],
+				extraFileExtensions: [".vue"]
 			},
-			plugins: ['@typescript-eslint'],
+			plugins: ["@typescript-eslint"],
 			extends: [
-				'eslint:all',
-				'plugin:vue/essential',
-				'plugin:vue/recommended',
-				'plugin:vue/strongly-recommended',
-				'plugin:@typescript-eslint/all',
-				'./.eslintdarwin.js',
-				'./.eslintrcts.js'
+				"eslint:all",
+				"plugin:vue/essential",
+				"plugin:vue/recommended",
+				"plugin:vue/strongly-recommended",
+				"plugin:@typescript-eslint/all",
+				"./.eslintbase.js",
+				"./.eslintrcts.js"
 			]
 		},
 		{
-			files        : ['*.ts'],
-			parser       : '@typescript-eslint/parser',
+			files        : ["*.ts"],
+			parser       : "@typescript-eslint/parser",
 			parserOptions: {
-				parser             : '@typescript-eslint/parser',
-				tsconfigRootDir    : __dirname,
-				project            : ['./tsconfig.json'],
-				extraFileExtensions: ['.vue']
+				parser             : "@typescript-eslint/parser",
+				tsconfigRootDir    : `${__dirname}/scripts`,
+				project            : ["./tsconfig.json"],
+				extraFileExtensions: [".vue"]
 			},
-			plugins: ['@typescript-eslint'],
+			plugins: ["@typescript-eslint"],
 			extends: [
-				'eslint:all',
-				'plugin:@typescript-eslint/all',
-				'./.eslintdarwin.js',
-				'./.eslintrcts.js'
+				"eslint:all",
+				"plugin:@typescript-eslint/all",
+				"./.eslintbase.js",
+				"./.eslintrcts.js"
 			]
 		}
 	]

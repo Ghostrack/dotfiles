@@ -9,7 +9,6 @@ module.exports = {
 		'max-lines'               : 'off',
 		'no-tabs'                 : 'off',
 		'max-len'                 : 'off',
-		quotes                    : 'off',
 		'max-lines-per-function'  : 'off',
 		'no-mixed-spaces-and-tabs': [
 			'error', 'smart-tabs'
