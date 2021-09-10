@@ -1,11 +1,6 @@
 module.exports = {
 	rules: {
 		'camelcase': 'off',
-		'@typescript-eslint/quotes': [
-			'error',
-			'single',
-			{avoidEscape: true}
-		],
 		'@typescript-eslint/indent': 'off',
 		'@typescript-eslint/naming-convention': [
 			'error',

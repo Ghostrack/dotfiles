@@ -1,9 +1,13 @@
 module.exports = {
 	globals: {
-		__dirname   : true,
-		AppVariables: true,
-		Backbone    : true,
-		module      : true
+		$                   : true,
+		__dirname           : true,
+		AppVariables        : true,
+		Backbone            : true,
+		Marionette          : true,
+		module              : true,
+		PM                  : true,
+		PMEntitySelectorView: true
 	},
 	extends: [
 		"eslint:all",
@@ -18,7 +22,7 @@ module.exports = {
 			parser       : "vue-eslint-parser",
 			parserOptions: {
 				parser             : "@typescript-eslint/parser",
-				tsconfigRootDir    : `${__dirname}/scripts`,
+				tsconfigRootDir    : "/home/fran/vagrant/www/purplemashweb/scripts",
 				project            : ["./tsconfig.json"],
 				extraFileExtensions: [".vue"]
 			},
@@ -38,7 +42,7 @@ module.exports = {
 			parser       : "@typescript-eslint/parser",
 			parserOptions: {
 				parser             : "@typescript-eslint/parser",
-				tsconfigRootDir    : `${__dirname}/scripts`,
+				tsconfigRootDir    : "/home/fran/vagrant/www/purplemashweb/scripts",
 				project            : ["./tsconfig.json"],
 				extraFileExtensions: [".vue"]
 			},
