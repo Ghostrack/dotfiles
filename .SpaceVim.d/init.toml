@@ -50,6 +50,8 @@
 	bootstrap_before = 'myspacevim#before'
 	bootstrap_after = 'myspacevim#after'
 
+	autocomplete_method = 'coc'
+
 # Show hidden files in filetree
 [[layers]]
 name = 'core'
@@ -59,9 +61,6 @@ filetree_show_hidden = true
 # Use coc.nvim autocomplete engine.
 [[layers]]
 name = 'autocomplete'
-auto_completion_return_key_behavior = 'complete'
-auto_completion_tab_key_behavior = 'smart'
-autocomplete_method = 'coc'
 
 # Enable shell layer
 [[layers]]
@@ -129,20 +128,6 @@ name = "lang#vue"
 [[layers]]
 name = "lang#xml"
 
-# Enable Language Server Protocol layer
-# for the enabled filetypes
-[[layers]]
-name = 'lsp'
-filetypes = [
-	# 'css',
-	# 'html',
-	# 'javascript',
-	'php',
-	# 'ruby',
-	'sh',
-	# 'vue'
-]
-
 # Install Vimproc plugin, required by SpaceVim
 [[custom_plugins]]
 name = 'Shougo/vimproc.vim'
@@ -152,6 +137,8 @@ merged = 0
 [[custom_plugins]]
 name = 'neoclide/coc.nvim'
 merged = 0
+rev = 'master'
+build = 'yarn install --frozen-lockfile'
 
 # Install vim-auto-save plugin, auto save on normal mode
 [[custom_plugins]]
