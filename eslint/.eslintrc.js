@@ -7,7 +7,9 @@ module.exports = {
 		Marionette          : true,
 		module              : true,
 		PM                  : true,
-		PMEntitySelectorView: true
+		PMEntitySelectorView: true,
+		PMSettings          : true,
+		T                   : true
 	},
 	extends: [
 		"eslint:all",
@@ -23,7 +25,7 @@ module.exports = {
 			parserOptions: {
 				parser             : "@typescript-eslint/parser",
 				tsconfigRootDir    : "/home/fran/vagrant/www/purplemashweb/scripts",
-				project            : ["./tsconfig.json"],
+				project            : ["./tsconfig.eslint.json"],
 				extraFileExtensions: [".vue"]
 			},
 			plugins: ["@typescript-eslint"],
@@ -43,7 +45,7 @@ module.exports = {
 			parserOptions: {
 				parser             : "@typescript-eslint/parser",
 				tsconfigRootDir    : "/home/fran/vagrant/www/purplemashweb/scripts",
-				project            : ["./tsconfig.json"],
+				project            : ["./tsconfig.eslint.json"],
 				extraFileExtensions: [".vue"]
 			},
 			plugins: ["@typescript-eslint"],

@@ -109,6 +109,10 @@ module.exports = {
 		'prefer-destructuring': [
 			'error',
 			{object: false}
+		],
+		'new-cap': [
+			'error',
+			{capIsNewExceptions: ['Component']}
 		]
 	}
 };

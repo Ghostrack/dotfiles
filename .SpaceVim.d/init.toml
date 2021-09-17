@@ -128,6 +128,20 @@ name = "lang#vue"
 [[layers]]
 name = "lang#xml"
 
+# Enable Language Server Protocol layer
+# for the enabled filetypes
+[[layers]]
+name = 'lsp'
+filetypes = [
+	# 'css',
+	# 'html',
+	# 'javascript',
+	'php',
+	# 'ruby',
+	'sh',
+	# 'vue'
+]
+
 # Install Vimproc plugin, required by SpaceVim
 [[custom_plugins]]
 name = 'Shougo/vimproc.vim'

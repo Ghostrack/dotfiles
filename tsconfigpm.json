@@ -1,4 +1,5 @@
 {
+	"extends": "/home/fran/vagrant/www/purplemashweb/scripts/tsconfig.json",
 	"compilerOptions": {
 		"allowJs": true,
 		"allowUmdGlobalAccess": true,
@@ -14,10 +15,7 @@
 		"module": "ES2020",
 		"moduleResolution": "node",
 		"noFallthroughCasesInSwitch": true,
-		"noImplicitOverride": true,
 		"noImplicitReturns": true,
-		"noPropertyAccessFromIndexSignature": true,
-		"noUncheckedIndexedAccess": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"outDir": "dist",
@@ -26,12 +24,15 @@
 		"strict": true,
 		"target": "ES2020",
 		"paths": {
-			"@/*": ["resources/assets/js/components/*"]
+			"*": [
+				"../grunt/node_modules/*",
+				"../grunt/node_modules/@types/*"
+			]
 		}
 	},
+	"exclude": ["node_modules"],
 	"include": [
 		"./**/*.vue",
 		"./**/*.ts"
-	],
-	"exclude": ["node_modules"]
+	]
 }

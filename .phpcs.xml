@@ -49,6 +49,7 @@
 		<exclude name="PSR12.Classes.ClosingBrace.StatementAfter" />
 		<exclude name="PSR2.ControlStructures.ElseIfDeclaration.NotAllowed" />
 		<exclude name="PSR2.ControlStructures.SwitchDeclaration.BreakIndent" />
+		<exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace" />
 	</rule>
 	<rule ref="Zend">
 		<exclude name="Zend.NamingConventions.ValidVariableName.PrivateNoUnderscore" />
