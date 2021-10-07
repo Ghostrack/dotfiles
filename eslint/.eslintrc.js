@@ -1,21 +1,6 @@
 module.exports = {
-	globals: {
-		$                   : true,
-		__dirname           : true,
-		AppVariables        : true,
-		Backbone            : true,
-		Marionette          : true,
-		module              : true,
-		PM                  : true,
-		PMEntitySelectorView: true,
-		PMSettings          : true,
-		T                   : true
-	},
 	extends: [
 		"eslint:all",
-		"plugin:vue/essential",
-		"plugin:vue/recommended",
-		"plugin:vue/strongly-recommended",
 		"./.eslintbase.js"
 	],
 	overrides: [
@@ -36,7 +21,8 @@ module.exports = {
 				"plugin:vue/strongly-recommended",
 				"plugin:@typescript-eslint/all",
 				"./.eslintbase.js",
-				"./.eslintrcts.js"
+				"./.eslintrcts.js",
+				"./.eslintrcvue.js"
 			]
 		},
 		{

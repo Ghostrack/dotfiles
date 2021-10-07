@@ -32,16 +32,18 @@
 
 	# Indent Options
 	default_indent = 4
-	expand_tab = false
 
 	# Disable plugin, incompatible with coc.nvim
 	disabled_plugins = ['deoplete.nvim']
 
 	# Disable guessing project root
-	project_rooter_automatically = false
+	project_auto_root = false
 
 	# Use ale as lint engine
 	lint_engine = 'ale'
+
+	# Autocomplete Engine
+	autocomplete_method = 'coc'
 
 	# Use nerdtree as file manager
 	filemanager = 'nerdtree'
@@ -49,8 +51,6 @@
 	# Bootstrap additional options
 	bootstrap_before = 'myspacevim#before'
 	bootstrap_after = 'myspacevim#after'
-
-	autocomplete_method = 'coc'
 
 # Show hidden files in filetree
 [[layers]]
@@ -81,7 +81,6 @@ git_plugin = 'fugitive'
 [[layers]]
 name = "checkers"
 lint_on_the_fly = true
-show_cursor_error = true
 
 # Enable default Version Control layer
 [[layers]]

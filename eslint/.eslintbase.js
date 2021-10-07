@@ -1,23 +1,7 @@
 module.exports = {
 	rules: {
-		'vue/html-indent': [
-			'error', 'tab'
-		],
-		'vue/multiline-html-element-content-newline': [
-			'error', {allowEmptyLines: true}
-		],
 		'max-lines'               : 'off',
-		'no-tabs'                 : 'off',
-		'max-len'                 : 'off',
 		'max-lines-per-function'  : 'off',
-		'no-mixed-spaces-and-tabs': [
-			'error', 'smart-tabs'
-		],
-		indent: [
-			'error',
-			'tab',
-			{SwitchCase: 1}
-		],
 		'quote-props': [
 			'error', 'as-needed'
 		],

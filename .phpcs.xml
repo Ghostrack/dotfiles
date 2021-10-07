@@ -77,6 +77,8 @@
 		<exclude name="Squiz.Commenting.InlineComment.DocBlock" />
 		<exclude name="Squiz.Commenting.BlockComment.WrongStart" />
 		<exclude name="Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps" />
+		<exclude name="Squiz.Operators.ComparisonOperatorUsage.NotAllowed" />
+		<exclude name="Squiz.Operators.ComparisonOperatorUsage.ImplicitTrue" />
 	</rule>
 	<rule ref="Squiz.WhiteSpace.OperatorSpacing">
 		<properties>

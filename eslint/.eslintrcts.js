@@ -24,7 +24,7 @@ module.exports = {
 			},
 			{
 				selector: 'variable',
-				format: ['camelCase', 'UPPER_CASE', 'snake_case'],
+				format: ['camelCase', 'UPPER_CASE', 'snake_case', 'PascalCase'],
 				leadingUnderscore: 'allow',
 				trailingUnderscore: 'allow',
 			},
@@ -35,6 +35,6 @@ module.exports = {
 		],
 		'@typescript-eslint/no-magic-numbers': 'off',
 		'@typescript-eslint/prefer-readonly-parameter-types': 'off',
-		'@typescript-eslint/no-dynamic-delete': 'off'
+		'@typescript-eslint/no-dynamic-delete': 'off',
 	}
 };
