@@ -9,8 +9,6 @@ module.exports = {
 		'padded-blocks'          : 'off',
 		'no-magic-numbers'       : 'off',
 		'no-ternary'             : 'off',
-		'dot-location'           : 'off',
-		'consistent-return'      : 'off',
 		'no-console'             : 'off',
 		'no-use-before-define'   : 'off',
 		'multiline-comment-style': 'off',

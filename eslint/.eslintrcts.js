@@ -36,5 +36,6 @@ module.exports = {
 		'@typescript-eslint/no-magic-numbers': 'off',
 		'@typescript-eslint/prefer-readonly-parameter-types': 'off',
 		'@typescript-eslint/no-dynamic-delete': 'off',
+		'@typescript-eslint/no-restricted-imports': ['error', []]
 	}
 };
