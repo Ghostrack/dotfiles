@@ -62,7 +62,7 @@ module.exports = {
 		'no-underscore-dangle': [
 			'error',
 			{
-				allow: ['_d']
+				allow: ['_id']
 			}
 		],
 		'capitalized-comments': 'off',

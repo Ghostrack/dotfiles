@@ -52,6 +52,9 @@
 	bootstrap_before = 'myspacevim#before'
 	bootstrap_after = 'myspacevim#after'
 
+[[layers]]
+name = "default"
+
 # Show hidden files in filetree
 [[layers]]
 name = 'core'
@@ -187,3 +190,8 @@ merged = 0
 [[custom_plugins]]
 name = 'MaxMEllon/vim-jsx-pretty'
 merged = 0
+
+# Install Typescript plugin
+[[custom_plugins]]
+name = 'mhartington/nvim-typescript'
+build = './install.sh'
