@@ -94,7 +94,12 @@ module.exports = {
 		],
 		'new-cap': [
 			'error',
-			{capIsNewExceptions: ['Component']}
+			{capIsNewExceptions: [
+                'Component',
+                'Mixins',
+                'Prop',
+                'Watch'
+            ]}
 		]
 	}
 };

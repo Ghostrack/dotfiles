@@ -149,13 +149,6 @@ filetypes = [
 name = 'Shougo/vimproc.vim'
 merged = 0
 
-# Install Coc.nvim plugin, for autocompletion
-[[custom_plugins]]
-name = 'neoclide/coc.nvim'
-merged = 0
-rev = 'master'
-build = 'yarn install --frozen-lockfile'
-
 # Install vim-auto-save plugin, auto save on normal mode
 [[custom_plugins]]
 name = '907th/vim-auto-save'
