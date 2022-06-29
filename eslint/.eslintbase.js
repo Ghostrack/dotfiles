@@ -1,77 +1,28 @@
 module.exports = {
 	rules: {
-		'max-lines'               : 'off',
-		'max-lines-per-function'  : 'off',
-		'quote-props': [
-			'error', 'as-needed'
-		],
-		'sort-keys'              : 'off',
-		'padded-blocks'          : 'off',
-		'no-magic-numbers'       : 'off',
-		'no-ternary'             : 'off',
-		'no-console'             : 'off',
-		'no-use-before-define'   : 'off',
-		'multiline-comment-style': 'off',
-		'no-process-env'         : 'off',
-		'max-params'             : 'off',
-		'max-statements'         : [
+        'quotes': ['error', 'double'],
+        'indent': ['error', 4],
+		'max-lines': 'off',
+		'quote-props': [ 'error', 'as-needed'],
+		'sort-keys': 'off',
+		'sort-imports': ['error', {
+			allowSeparatedGroups: true,
+			ignoreCase: true
+		}],
+		'padded-blocks': 'off',
+		'no-ternary': 'off',
+		'no-use-before-define': 'off',
+		'max-statements': [
 			'error', 15
 		],
-		'one-var': 'off',
-		radix    : [
-			'error', 'as-needed'
-		],
-		'consistent-this': [
-			'error', 'env'
-		],
-		'function-call-argument-newline': [
-			'error', 'consistent'
-		],
-		'multiline-ternary': [
-			'error', 'always-multiline'
-		],
-		'array-element-newline': [
-			'error', 'consistent'
-		],
-		'no-unused-expressions': [
-			'error',
-			{
-				allowTernary: true
-			}
-		],
-		'sort-imports': [
-			'error',
-			{
-				ignoreCase           : true,
-				ignoreDeclarationSort: true,
-				ignoreMemberSort     : false,
-				memberSyntaxSortOrder: [
-					'none',
-					'all',
-					'multiple',
-					'single'
-				]
-			}
-		],
-		camelcase: [
-			'error',
-			{
-				properties: 'never'
-			}
-		],
+		'one-var': ['error', 'never'],
+		radix: ['error', 'as-needed'],
+		'function-call-argument-newline': ['error', 'consistent'],
+		'multiline-ternary': ['error', 'always-multiline'],
+		'array-element-newline': ['error', 'consistent'],
 		'no-underscore-dangle': [
 			'error',
-			{
-				allow: ['_id']
-			}
-		],
-		'capitalized-comments': 'off',
-		'id-length'           : 'off',
-		'no-unused-vars'      : [
-			'error',
-			{
-				ignoreRestSiblings: true
-			}
+			{allow: ['_id']}
 		],
 		'key-spacing': [
 			'error',
@@ -96,10 +47,16 @@ module.exports = {
 			'error',
 			{capIsNewExceptions: [
                 'Component',
+				'Inject',
                 'Mixins',
                 'Prop',
+				'Provide',
+				'Ref',
+				'VModel',
                 'Watch'
             ]}
-		]
+		],
+        "comma-dangle": ["error", "always-multiline"],
+        "unicorn/filename-case": ["error", {case: "pascalCase"}]
 	}
 };

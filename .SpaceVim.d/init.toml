@@ -132,17 +132,17 @@ name = "lang#xml"
 
 # Enable Language Server Protocol layer
 # for the enabled filetypes
-[[layers]]
-name = 'lsp'
-filetypes = [
+# [[layers]]
+# name = 'lsp'
+# filetypes = [
 	# 'css',
 	# 'html',
 	# 'javascript',
-	'php',
+	# 'php',
 	# 'ruby',
-	'sh',
+	# 'sh',
 	# 'vue'
-]
+# ]
 
 # Install Vimproc plugin, required by SpaceVim
 [[custom_plugins]]
@@ -183,8 +183,3 @@ merged = 0
 [[custom_plugins]]
 name = 'MaxMEllon/vim-jsx-pretty'
 merged = 0
-
-# Install Typescript plugin
-[[custom_plugins]]
-name = 'mhartington/nvim-typescript'
-build = './install.sh'

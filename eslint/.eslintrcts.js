@@ -1,5 +1,6 @@
 module.exports = {
 	rules: {
+        "tsdoc/syntax": "warn",
 		'camelcase': 'off',
 		'@typescript-eslint/indent': 'off',
 		'@typescript-eslint/naming-convention': [
@@ -32,10 +33,18 @@ module.exports = {
 				selector: 'typeLike',
 				format: ['PascalCase'],
 			},
+			{
+				selector: 'typeProperty',
+				format: ['camelCase', 'PascalCase']
+			}
 		],
 		'@typescript-eslint/no-magic-numbers': 'off',
 		'@typescript-eslint/prefer-readonly-parameter-types': 'off',
 		'@typescript-eslint/no-dynamic-delete': 'off',
-		'@typescript-eslint/no-restricted-imports': ['error', []]
+		'@typescript-eslint/no-restricted-imports': ['error', []],
+		"init-declarations": "off",
+		"@typescript-eslint/init-declarations": ["error"],
+        "comma-dangle": "off",
+        "@typescript-eslint/comma-dangle": ["error", "always-multiline"]
 	}
 };

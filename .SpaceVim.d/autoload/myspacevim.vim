@@ -14,6 +14,8 @@ function! myspacevim#after() abort
 	let g:ale_disable_lsp = 1
 	let g:auto_save = 1
     let g:fzf_preview_window = ['down:60%', 'ctrl-/']
+    let g:smoothie_speed_linear_factor = 60
+    let g:smoothie_speed_exponentiation_factor = 0.6
 
 	nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 	nmap <silent> <C-j> <Plug>(ale_next_wrap)
