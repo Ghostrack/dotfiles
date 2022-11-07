@@ -130,6 +130,10 @@ name = "lang#vue"
 [[layers]]
 name = "lang#xml"
 
+# Enable markdown layer
+[[layers]]
+  name = "lang#markdown"
+
 # Enable Language Server Protocol layer
 # for the enabled filetypes
 # [[layers]]
@@ -146,40 +150,45 @@ name = "lang#xml"
 
 # Install Vimproc plugin, required by SpaceVim
 [[custom_plugins]]
-name = 'Shougo/vimproc.vim'
-merged = 0
+repo = 'Shougo/vimproc.vim'
+merged = false
 
 # Install vim-auto-save plugin, auto save on normal mode
 [[custom_plugins]]
-name = '907th/vim-auto-save'
-merged = 0
+repo = '907th/vim-auto-save'
+merged = false
 
 # Install fzf.vim plugin, Fuzzy Finder
 [[custom_plugins]]
-name = 'junegunn/fzf.vim'
-merged = 0
+repo = 'junegunn/fzf.vim'
+merged = false
 
 # Install fzf-preview.vim plugin, Has a good project file search
 [[custom_plugins]]
-name = 'yuki-yano/fzf-preview.vim'
-merged = 0
+repo = 'yuki-yano/fzf-preview.vim'
+merged = false
 
 # Install vim-smoothie plugin, Smooth Scrolling
 [[custom_plugins]]
-name = 'psliwka/vim-smoothie'
-merged = 0
+repo = 'psliwka/vim-smoothie'
+merged = false
 
 # Install vista.vim plugin, Used mainly for tags navigation
 [[custom_plugins]]
-name = 'liuchengxu/vista.vim'
-merged = 0
+repo = 'liuchengxu/vista.vim'
+merged = false
 
 # Install vim-devicons.vim plugin, Filetype Icons
 [[custom_plugins]]
-name = 'ryanoasis/vim-devicons'
-merged = 0
+repo = 'ryanoasis/vim-devicons'
+merged = false
 
 # Install vim-jsx-pretty plugin, Syntaxt Highlighting for React JSX
 [[custom_plugins]]
-name = 'MaxMEllon/vim-jsx-pretty'
-merged = 0
+repo = 'MaxMEllon/vim-jsx-pretty'
+merged = false
+
+# Install vim-jsx-pretty plugin, Syntaxt Highlighting for React JSX
+[[custom_plugins]]
+repo = 'evanleck/vim-svelte'
+merged = false

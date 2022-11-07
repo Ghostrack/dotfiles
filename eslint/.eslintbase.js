@@ -1,16 +1,22 @@
 module.exports = {
 	rules: {
-        'quotes': ['error', 'double'],
-        'indent': ['error', 4],
-		'max-lines': 'off',
-		'quote-props': [ 'error', 'as-needed'],
-		'sort-keys': 'off',
+
+        // Disable limit number of lines
+		"max-lines": "off",
+
+        // Enforce quote around object properties only if needed.
+		"quote-props": ["error", "consistent-as-needed"],
+
+        // Force double quotes
+        "quotes": ["error", "double"],
+
 		'sort-imports': ['error', {
 			allowSeparatedGroups: true,
 			ignoreCase: true
 		}],
 		'padded-blocks': 'off',
 		'no-ternary': 'off',
+        'no-undefined': "off",
 		'no-use-before-define': 'off',
 		'max-statements': [
 			'error', 15
@@ -19,7 +25,7 @@ module.exports = {
 		radix: ['error', 'as-needed'],
 		'function-call-argument-newline': ['error', 'consistent'],
 		'multiline-ternary': ['error', 'always-multiline'],
-		'array-element-newline': ['error', 'consistent'],
+		'array-element-newline': ['error', 'always'],
 		'no-underscore-dangle': [
 			'error',
 			{allow: ['_id']}
@@ -46,17 +52,18 @@ module.exports = {
 		'new-cap': [
 			'error',
 			{capIsNewExceptions: [
-                'Component',
-				'Inject',
-                'Mixins',
-                'Prop',
-				'Provide',
-				'Ref',
-				'VModel',
-                'Watch'
+                "Component",
+				"Inject",
+                "Mixins",
+                "Prop",
+                "PropSync",
+				"Provide",
+				"Ref",
+				"VModel",
+                "Watch"
             ]}
 		],
         "comma-dangle": ["error", "always-multiline"],
-        "unicorn/filename-case": ["error", {case: "pascalCase"}]
+        "unicorn/filename-case": ["error", {case: "pascalCase"}],
 	}
 };

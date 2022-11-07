@@ -1,4 +1,19 @@
 module.exports = {
+    env: {
+      browser: true,
+      jest   : true,
+      jquery : true,
+      mocha  : true,
+    },
+    globals: {
+        AppVariables   : "readonly",
+        Backbone       : "readonly",
+        DocumentHandler: "readonly",
+        _              : "readonly",
+        define         : "readonly",
+        PM             : "readonly",
+        Platforms      : "readonly",
+    },
     parserOptions: {
         ecmaVersion: "latest",
         sourceType : "module",
@@ -7,7 +22,8 @@ module.exports = {
         "eslint:all",
         "plugin:import/recommended",
         "plugin:unicorn/all",
-        "./.eslintbase.js",
+        "prettier",
+        ".eslintbase.js",
     ],
     settings: {
         "import/resolver": {
@@ -23,7 +39,7 @@ module.exports = {
             parserOptions: {
                 parser             : "@typescript-eslint/parser",
                 tsconfigRootDir    : "/home/fran/vagrant/www/purplemashweb/scripts",
-                project            : "./tsconfig.eslint.json",
+                project            : "tsconfig.eslint.json",
                 extraFileExtensions: ["vue"],
             },
             plugins: [
@@ -37,9 +53,10 @@ module.exports = {
                 "plugin:vue/strongly-recommended",
                 "plugin:@typescript-eslint/all",
                 "plugin:unicorn/all",
-                "./.eslintbase.js",
-                "./.eslintrcts.js",
-                "./.eslintrcvue.js",
+                "prettier",
+                ".eslintbase.js",
+                ".eslintrcts.js",
+                ".eslintrcvue.js",
             ],
         },
         {
@@ -48,7 +65,7 @@ module.exports = {
             parserOptions: {
                 parser             : "@typescript-eslint/parser",
                 tsconfigRootDir    : "/home/fran/vagrant/www/purplemashweb/scripts",
-                project            : "./tsconfig.eslint.json",
+                project            : "tsconfig.eslint.json",
                 extraFileExtensions: ["vue"],
             },
             plugins: [
@@ -59,8 +76,9 @@ module.exports = {
                 "eslint:all",
                 "plugin:@typescript-eslint/all",
                 "plugin:unicorn/all",
-                "./.eslintbase.js",
-                "./.eslintrcts.js",
+                "prettier",
+                ".eslintbase.js",
+                ".eslintrcts.js",
             ],
         },
     ],
