@@ -96,7 +96,7 @@ name = 'VersionControl'
 
 # Enable colorscheme layer, additional vim colours
 [[layers]]
-name = 'colorscheme'
+name = "colorscheme"
 
 # Enable lang#php layer for PHP utilities
 [[layers]]
@@ -132,7 +132,7 @@ name = "lang#xml"
 
 # Enable markdown layer
 [[layers]]
-  name = "lang#markdown"
+name = "lang#markdown"
 
 # Enable Language Server Protocol layer
 # for the enabled filetypes
@@ -186,9 +186,4 @@ merged = false
 # Install vim-jsx-pretty plugin, Syntaxt Highlighting for React JSX
 [[custom_plugins]]
 repo = 'MaxMEllon/vim-jsx-pretty'
-merged = false
-
-# Install vim-jsx-pretty plugin, Syntaxt Highlighting for React JSX
-[[custom_plugins]]
-repo = 'evanleck/vim-svelte'
 merged = false

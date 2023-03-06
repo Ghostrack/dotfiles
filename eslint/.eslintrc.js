@@ -5,19 +5,6 @@ module.exports = {
       jquery : true,
       mocha  : true,
     },
-    globals: {
-        AppVariables   : "readonly",
-        Backbone       : "readonly",
-        DocumentHandler: "readonly",
-        _              : "readonly",
-        define         : "readonly",
-        PM             : "readonly",
-        Platforms      : "readonly",
-    },
-    parserOptions: {
-        ecmaVersion: "latest",
-        sourceType : "module",
-    },
     extends: [
         "eslint:all",
         "plugin:import/recommended",
@@ -25,12 +12,15 @@ module.exports = {
         "prettier",
         ".eslintbase.js",
     ],
-    settings: {
-        "import/resolver": {
-            webpack: {
-                config: "/home/fran/vagrant/www/purplemashweb/grunt/webpack.config.js",
-            },
-        },
+    globals: {
+        AppVariables   : "readonly",
+        Backbone       : "readonly",
+        DocumentHandler: "readonly",
+        define         : "readonly",
+        moment         : "readonly",
+        Platforms      : "readonly",
+        PM             : "readonly",
+        _              : "readonly",
     },
     overrides: [
         {
@@ -82,4 +72,15 @@ module.exports = {
             ],
         },
     ],
+    parserOptions: {
+        ecmaVersion: "latest",
+        sourceType : "module",
+    },
+    settings: {
+        "import/resolver": {
+            webpack: {
+                config: "/home/fran/vagrant/www/purplemashweb/grunt/webpack.config.js",
+            },
+        },
+    },
 };
