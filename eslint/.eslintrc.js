@@ -1,10 +1,11 @@
 module.exports = {
+
+    // Enable browser environment
     env: {
-      browser: true,
-      jest   : true,
-      jquery : true,
-      mocha  : true,
+        browser: true,
     },
+
+    // Rulesets
     extends: [
         "eslint:all",
         "plugin:import/recommended",
@@ -12,75 +13,63 @@ module.exports = {
         "prettier",
         ".eslintbase.js",
     ],
-    globals: {
-        AppVariables   : "readonly",
-        Backbone       : "readonly",
-        DocumentHandler: "readonly",
-        define         : "readonly",
-        moment         : "readonly",
-        Platforms      : "readonly",
-        PM             : "readonly",
-        _              : "readonly",
-    },
+
+    // Overrides for vue and typescript files
     overrides: [
         {
             files        : ["*.vue"],
             parser       : "vue-eslint-parser",
-            parserOptions: {
-                parser             : "@typescript-eslint/parser",
-                tsconfigRootDir    : "/home/fran/vagrant/www/purplemashweb/scripts",
-                project            : "tsconfig.eslint.json",
-                extraFileExtensions: ["vue"],
-            },
-            plugins: [
-                "@typescript-eslint",
-                "eslint-plugin-tsdoc",
-            ],
+            // parserOptions: {
+            //     parser             : "@typescript-eslint/parser",
+            //     tsconfigRootDir    : "/home/fran/vagrant/www/purplemashweb/scripts",
+            //     project            : "tsconfig.eslint.json",
+            //     extraFileExtensions: ["vue"],
+            // },
+            // plugins: [
+            //     "@typescript-eslint",
+            //     "eslint-plugin-tsdoc",
+            // ],
             extends: [
                 "eslint:all",
                 "plugin:vue/essential",
                 "plugin:vue/recommended",
                 "plugin:vue/strongly-recommended",
-                "plugin:@typescript-eslint/all",
+                // "plugin:@typescript-eslint/all",
                 "plugin:unicorn/all",
                 "prettier",
                 ".eslintbase.js",
-                ".eslintrcts.js",
+                // ".eslintrcts.js",
                 ".eslintrcvue.js",
             ],
         },
-        {
-            files        : ["*.ts"],
-            parser       : "@typescript-eslint/parser",
-            parserOptions: {
-                parser             : "@typescript-eslint/parser",
-                tsconfigRootDir    : "/home/fran/vagrant/www/purplemashweb/scripts",
-                project            : "tsconfig.eslint.json",
-                extraFileExtensions: ["vue"],
-            },
-            plugins: [
-                "@typescript-eslint",
-                "eslint-plugin-tsdoc",
-            ],
-            extends: [
-                "eslint:all",
-                "plugin:@typescript-eslint/all",
-                "plugin:unicorn/all",
-                "prettier",
-                ".eslintbase.js",
-                ".eslintrcts.js",
-            ],
-        },
+        // {
+        //     files        : ["*.ts"],
+        //     parser       : "@typescript-eslint/parser",
+        //     parserOptions: {
+        //         parser             : "@typescript-eslint/parser",
+        //         tsconfigRootDir    : "/home/fran/vagrant/www/purplemashweb/scripts",
+        //         project            : "tsconfig.eslint.json",
+        //         extraFileExtensions: ["vue"],
+        //     },
+        //     plugins: [
+        //         "@typescript-eslint",
+        //         "eslint-plugin-tsdoc",
+        //     ],
+        //     extends: [
+        //         "eslint:all",
+        //         "plugin:@typescript-eslint/all",
+        //         "plugin:unicorn/all",
+        //         "prettier",
+        //         ".eslintbase.js",
+        //         ".eslintrcts.js",
+        //     ],
+        // },
     ],
+
+    // Use latest version of ECMA
     parserOptions: {
         ecmaVersion: "latest",
         sourceType : "module",
     },
-    settings: {
-        "import/resolver": {
-            webpack: {
-                config: "/home/fran/vagrant/www/purplemashweb/grunt/webpack.config.js",
-            },
-        },
-    },
+
 };
