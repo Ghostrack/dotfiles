@@ -24,14 +24,11 @@ vim.opt.wildmode = 'longest:full,full'
 -- Update terminal title
 vim.opt.title = true
 
--- Enable mouse controls
-vim.opt.mouse = 'a'
+-- Disable mouse controls
+vim.opt.mouse = ''
 
 -- Enable full terminal colours
 vim.opt.termguicolors = true
-
--- Enable spell check
-vim.opt.spell = true
 
 -- Make search case insensitive, unless an uppercase character is present
 vim.opt.ignorecase = true

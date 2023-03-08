@@ -16,6 +16,10 @@ require('nvim-tree').setup({
   },
 })
 
+local function open_nvim_tree()
+  require("nvim-tree.api").tree.open()
+end
+
 vim.cmd([[
   highlight NvimTreeIndentMarker guifg=#30323E
   augroup NvimTreeHighlights
@@ -24,3 +28,5 @@ vim.cmd([[
 ]])
 
 vim.keymap.set('n', '<Leader>n', ':NvimTreeFindFileToggle<CR>')
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })

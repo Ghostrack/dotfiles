@@ -35,6 +35,7 @@ module.exports = {
                 "plugin:vue/recommended",
                 "plugin:vue/strongly-recommended",
                 // "plugin:@typescript-eslint/all",
+                "plugin:import/recommended",
                 "plugin:unicorn/all",
                 "prettier",
                 ".eslintbase.js",
