@@ -22,6 +22,12 @@ require('lspconfig').jsonls.setup({
   }
 })
 
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+require('lspconfig').cssls.setup({ capabilities = capabilities })
+
+require('lspconfig').stylelint_lsp.setup({ capabilities = capabilities })
+
 require('null-ls').setup({
   sources = {
     require('null-ls').builtins.diagnostics.eslint_d.with({
@@ -38,6 +44,7 @@ require('null-ls').setup({
         return utils.root_has_file({'.phpcs.xml'})
       end,
     }),
+    require('null-ls').builtins.diagnostics.stylelint,
     require('null-ls').builtins.formatting.eslint_d.with({
       condition = function(utils)
         return utils.root_has_file({'.eslintrc.js'})

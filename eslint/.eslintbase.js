@@ -22,32 +22,69 @@ module.exports = {
         // Treat var statements as if they were block scoped
         'block-scoped-var': 'error',
 
+        // Enforce that class methods use "this"
+        "class-methods-use-this": ["error", {
+            exceptMethods: [],
+        }],
+
         // Enforce dangling comma with multiline arrays and objects
         "comma-dangle": ["error", "always-multiline"],
 
+        // Require return statements to either always or never specify values
+        "consistent-return": "error",
+
+        // Require curly brace conventions for all control statements
+        curly: "error",
+
+        // Require default case in switch statements
+        "default-case": "error",
+
+        // Enforce default clauses in switch statements to be last
+        "default-case-last": "error",
+
+        // Enforce default parameters to be last
+        "default-param-last": "error",
+
+        // Encourages use of dot notation whenever possible
+        "dot-notation": "error",
+
+        // Enforces consistent newlines after dots
+        "dot-location": ["error", "object"],
+
+        // Require the use of === and !==
+        eqeqeq: ["error", "always", { null: "ignore" }],
+
         // Enforce function argument in new line only if function declaration has multiple lines
-        'function-call-argument-newline': ['error', 'consistent'],
+        "function-call-argument-newline": ["error", "consistent"],
+
+        // Require grouped accessor pairs in object literals and classes, get before set
+        "grouped-accessor-pairs": ["error", "getBeforeSet"],
+
+        // Ensure for-in loops have an if statement
+        "guard-for-in": "error",
 
         // Enforce space after object key
-        'key-spacing': [
-            'error',
-            {
-                align: {
-                    beforeColon: false,
-                    afterColon : true,
-                    on         : 'colon',
-                    mode       : 'strict'
-                }
-            }
-        ],
+        "key-spacing": ["error", {
+            align: {
+                afterColon : true,
+                beforeColon: false,
+                mode       : "strict",
+                on         : "colon",
+            },
+        }],
 
-        // Disable limit number of lines
-        "max-lines": "off",
+        // Enforce only one class per file
+        "max-classes-per-file": ["error", 1],
+
+        // Set max number of lines per file, ignore empty lines and comments
+        "max-lines": ["error", {
+            max           : 200,
+            skipBlankLines: true,
+            skipComments  : true,
+        }],
 
         // Max statements allowed per function
-        'max-statements': [
-            'error', 15
-        ],
+        "max-statements": ["error", 15],
 
         // Force ternary operator to always be multiline
         'multiline-ternary': ['error', 'always-multiline'],
