@@ -87,23 +87,22 @@ module.exports = {
         "max-statements": ["error", 15],
 
         // Force ternary operator to always be multiline
-        'multiline-ternary': ['error', 'always-multiline'],
+        "multiline-ternary": ["error", "always-multiline"],
 
         // Allow capitalised name only for constructors, with exceptions
-        'new-cap': [
-            'error',
-            {capIsNewExceptions: [
-                "Component",
-                "Inject",
-                "Mixins",
-                "Prop",
-                "PropSync",
-                "Provide",
-                "Ref",
-                "VModel",
-                "Watch"
-            ]}
-        ],
+        "new-cap": "error",
+
+        // Disallow the use of alert, confirm and prompt.
+        "no-alert": "error",
+
+        // Disallow use of arguments.caller or arguments.callee
+        "no-caller": "error",
+
+        // Disallow lexical declarations in case/default clauses
+        "no-case-declarations": "error",
+
+        // Disallow returning value in constructor
+        "no-constructor-return": "error",
 
         // Allow ternary operator
         'no-ternary': 'off',

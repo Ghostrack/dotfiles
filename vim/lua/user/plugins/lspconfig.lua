@@ -65,7 +65,7 @@ vim.keymap.set('n', 'gr', ':Telescope lsp_references<CR>')
 vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
 vim.keymap.set('n', '<Leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
 
-vim.api.nvim_create_user_command('Format', vim.lsp.buf.formatting, {})
+vim.api.nvim_create_user_command('Format', vim.lsp.buf.format, {})
 
 vim.diagnostic.config({
   virtual_text = false,
