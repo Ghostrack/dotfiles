@@ -146,9 +146,6 @@ module.exports = {
             ignoreCase: true
         }],
 
-        // Allow pascal case for filenames
-        "unicorn/filename-case": ["error", {case: "pascalCase"}],
-
     }
 
 };
