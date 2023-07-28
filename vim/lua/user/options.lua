@@ -25,7 +25,7 @@ vim.opt.wildmode = 'longest:full,full'
 vim.opt.title = true
 
 -- Disable mouse controls
-vim.opt.mouse = ''
+vim.opt.mouse = 'a'
 
 -- Enable full terminal colours
 vim.opt.termguicolors = true

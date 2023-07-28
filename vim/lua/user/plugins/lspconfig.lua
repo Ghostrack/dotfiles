@@ -44,6 +44,11 @@ require('null-ls').setup({
         return utils.root_has_file({'.phpcs.xml'})
       end,
     }),
+    require('null-ls').builtins.diagnostics.phpstan.with({
+      condition = function(utils)
+        return utils.root_has_file({'phpstan.neon'})
+      end,
+    }),
     require('null-ls').builtins.diagnostics.stylelint,
     require('null-ls').builtins.formatting.eslint_d.with({
       condition = function(utils)
