@@ -237,7 +237,7 @@ module.exports = {
             },
             {
                 selector: 'typeProperty',
-                format: ['camelCase', 'PascalCase']
+                format: ['camelCase', 'PascalCase', 'snake_case']
             },
             {
                 selector: 'enumMember',
@@ -247,7 +247,6 @@ module.exports = {
         '@typescript-eslint/no-magic-numbers': 'off',
         '@typescript-eslint/prefer-readonly-parameter-types': 'off',
         '@typescript-eslint/no-dynamic-delete': 'off',
-        '@typescript-eslint/no-restricted-imports': ['error', []],
         "init-declarations": "off",
         "@typescript-eslint/init-declarations": ["warn"],
         "comma-dangle": "off",
