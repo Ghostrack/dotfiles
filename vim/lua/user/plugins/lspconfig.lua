@@ -28,6 +28,8 @@ require('lspconfig').cssls.setup({ capabilities = capabilities })
 
 require('lspconfig').stylelint_lsp.setup({ capabilities = capabilities })
 
+require('lspconfig').gdscript.setup({ capabilities = capabilities })
+
 require('null-ls').setup({
   sources = {
     require('null-ls').builtins.diagnostics.eslint_d.with({
@@ -50,12 +52,14 @@ require('null-ls').setup({
       end,
     }),
     require('null-ls').builtins.diagnostics.stylelint,
+    require('null-ls').builtins.diagnostics.gdlint,
     require('null-ls').builtins.formatting.eslint_d.with({
       condition = function(utils)
         return utils.root_has_file({'.eslintrc.js'})
       end,
     }),
     require('null-ls').builtins.formatting.prettierd,
+    require('null-ls').builtins.formatting.gdformat,
   }
 })
 
