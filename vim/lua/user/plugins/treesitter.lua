@@ -51,6 +51,7 @@ return {
       'rust',
       'sql',
       'svelte',
+      'twig',
       'typescript',
       'vim',
       'vue',

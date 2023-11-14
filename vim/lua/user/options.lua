@@ -56,7 +56,7 @@ vim.opt.sidescrolloff = 8
 vim.opt.clipboard = 'unnamedplus'
 
 -- Enable confirmation instead of errors
-vim.opt.confirm = true
+-- vim.opt.confirm = true
 
 -- Keep undo history
 vim.opt.undofile = true
