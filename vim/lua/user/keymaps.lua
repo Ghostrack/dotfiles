@@ -33,9 +33,6 @@ vim.keymap.set('i', ',,', '<Esc>A,<Esc>')
 -- Open the current file in the default program (on Mac this should just be just `open`)
 vim.keymap.set('n', '<leader>x', ':!open %<cr><cr>')
 
--- Delete current buffer and go to previous one
-vim.keymap.set('n', '<leader>bd', ':<C-U>bprevious <bar> bdelete #<CR>')
-
 vim.keymap.set('n', 'H', ':bprev<CR>')
 vim.keymap.set('n', 'L', ':bnext<CR>')
 

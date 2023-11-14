@@ -1,3 +1,5 @@
+vim.opt.cmdheight = 0
+
 -- Convert tabs to spaces
 vim.opt.expandtab = true
 
@@ -26,6 +28,7 @@ vim.opt.title = true
 
 -- Disable mouse controls
 vim.opt.mouse = 'a'
+vim.opt.mousemoveevent = true -- Allow hovering in bufferline
 
 -- Enable full terminal colours
 vim.opt.termguicolors = true
@@ -66,3 +69,18 @@ vim.opt.backupdir:remove('.')
 
 -- Always show sign column
 vim.opt.signcolumn = 'yes:2'
+
+vim.opt.breakindent = true -- maintain indent when wrapping indented lines
+vim.opt.linebreak = true -- wrap at word boundaries
+
+vim.opt.completeopt = 'menuone,longest,preview'
+
+vim.opt.showmode = false
+
+vim.opt.updatetime = 4001 -- Set updatime to 1ms longer than the default to prevent polyglot from changing it
+
+vim.opt.redrawtime = 10000 -- Allow more time for loading syntax on large files
+
+vim.opt.exrc = true
+vim.opt.secure = true
+vim.opt.titlestring = '%f // nvim'
