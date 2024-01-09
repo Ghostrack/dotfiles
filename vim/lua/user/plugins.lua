@@ -97,6 +97,7 @@ require("lazy").setup({
 
   -- Improved syntax highlighting
   { import = 'user.plugins.treesitter' },
+  { import = 'user.plugins.nvim-ts-context-commentstring' },
 
   -- Language Server Protocol.
   { import = 'user.plugins.lspconfig' },
@@ -138,9 +139,9 @@ require("lazy").setup({
   change_detection = {
     notify = false,
   },
-  install = {
-    colorscheme = { "gruvbox", "tokyonight", "habamax" },
-  },
+  -- install = {
+  --   colorscheme = { "gruvbox-flat" },
+  -- },
 })
 
 -- Better syntaxt highlighting

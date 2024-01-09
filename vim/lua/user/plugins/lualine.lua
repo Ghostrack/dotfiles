@@ -10,6 +10,7 @@ return {
       section_separators = '',
       component_separators = '',
       globalstatus = true,
+      theme = 'gruvbox-material'
     },
     sections = {
       lualine_a = {

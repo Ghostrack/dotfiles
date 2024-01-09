@@ -84,3 +84,8 @@ vim.opt.redrawtime = 10000 -- Allow more time for loading syntax on large files
 vim.opt.exrc = true
 vim.opt.secure = true
 vim.opt.titlestring = '%f // nvim'
+
+vim.g.gruvbox_material_background = "medium"
+vim.g.gruvbox_material_foreground = "original"
+
+vim.g.skip_ts_context_commentstring_module = true
