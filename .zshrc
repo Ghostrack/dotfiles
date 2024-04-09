@@ -8,6 +8,8 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
+export ESLINT_USE_FLAT_CONFIG=true
+
 typeset -U path cdpath fpath
 
 path=(

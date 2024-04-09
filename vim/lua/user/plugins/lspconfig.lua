@@ -107,7 +107,7 @@ return {
       sources = {
         null_ls.builtins.diagnostics.eslint_d.with({
           condition = function(utils)
-            return utils.root_has_file({ '.eslintrc.js' })
+            return utils.root_has_file({ '.eslintrc.js', 'eslint.config.js' })
           end,
         }),
 
@@ -132,7 +132,7 @@ return {
 
         null_ls.builtins.formatting.eslint_d.with({
           condition = function(utils)
-            return utils.root_has_file({ '.eslintrc.js', '.eslintrc.json' })
+            return utils.root_has_file({ '.eslintrc.js', '.eslintrc.json', 'eslint.config.js' })
           end,
         }),
         null_ls.builtins.formatting.pint.with({
@@ -147,18 +147,18 @@ return {
         }),
         null_ls.builtins.formatting.gdformat,
       },
-      on_attach = function(client, bufnr)
-        if client.supports_method("textDocument/formatting") then
-          vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-          vim.api.nvim_create_autocmd("BufWritePre", {
-            group = augroup,
-            buffer = bufnr,
-            callback = function()
-              vim.lsp.buf.format({ bufnr = bufnr, timeout_ms = 5000 })
-            end,
-          })
-        end
-      end,
+      -- on_attach = function(client, bufnr)
+      --   if client.supports_method("textDocument/formatting") then
+      --     vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+      --     vim.api.nvim_create_autocmd("BufWritePre", {
+      --       group = augroup,
+      --       buffer = bufnr,
+      --       callback = function()
+      --         vim.lsp.buf.format({ bufnr = bufnr, timeout_ms = 5000 })
+      --       end,
+      --     })
+      --   end
+      -- end,
     })
 
     require('mason-null-ls').setup({ automatic_installation = true })

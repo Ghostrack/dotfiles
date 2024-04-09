@@ -114,9 +114,6 @@ require("lazy").setup({
   -- Testing helper
   { import = 'user.plugins.vim-test' },
 
-  -- GitHub Copilot
-  { import = 'user.plugins.copilot' },
-
   -- Colorize Hex Codes
   { import = 'user.plugins.colorizer' },
 

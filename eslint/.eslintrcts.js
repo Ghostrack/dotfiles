@@ -242,6 +242,14 @@ module.exports = {
             {
                 selector: 'enumMember',
                 format: ['camelCase', 'PascalCase']
+            },
+            {
+                selector: 'import',
+                format: ['camelCase', 'PascalCase'],
+            },
+            {
+                selector: 'function',
+                format: ['camelCase', 'PascalCase'],
             }
         ],
         '@typescript-eslint/no-magic-numbers': 'off',
@@ -253,6 +261,15 @@ module.exports = {
         "@typescript-eslint/comma-dangle": ["error", "always-multiline"],
         "@typescript-eslint/no-type-alias": ["error", {allowAliases: "in-unions"}],
         "no-unused-expressions": "off",
-        "@typescript-eslint/no-unused-expressions": ["warn", {allowTernary: true}]
+        "@typescript-eslint/no-unused-expressions": ["warn", {allowTernary: true}],
+        "react/jsx-filename-extension": [1,
+            {
+                "extensions": [
+                    ".tsx"
+                ]
+            }
+        ],
+        "react/forbid-component-props": "off",
+        "@typescript-eslint/no-misused-promises": ["error", {checksVoidReturn: false}],
     }
 };

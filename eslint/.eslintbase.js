@@ -146,6 +146,17 @@ module.exports = {
             ignoreCase: true
         }],
 
+        "unicorn/prevent-abbreviations": ["warn"],
+
+        "max-lines-per-function": ["error", {
+            skipBlankLines: true,
+            skipComments: true,
+        }],
+
+        "react/jsx-max-depth": ["error", {max: 6}],
+
+        "react/jsx-no-literals": "off",
+
     }
 
 };

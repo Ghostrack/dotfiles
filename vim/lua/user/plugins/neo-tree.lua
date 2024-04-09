@@ -48,6 +48,7 @@ return {
       mappings = {
         ["<cr>"] = "open_with_window_picker",
       },
+      width = 35
     },
     filesystem = {
       filtered_items = {
