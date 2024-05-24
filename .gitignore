@@ -1,1 +1,4 @@
+.DS_Store
+.git
 .netrwhist
+vim/lazy-lock.json

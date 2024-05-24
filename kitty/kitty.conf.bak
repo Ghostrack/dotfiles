@@ -1,0 +1,22 @@
+font_family Monaspace Argon Var Light
+bold_font Monaspace Argon Var Bold
+italic_font Monaspace Argon Var Italic
+bold_italic_font Monaspace Argon Var Bold Italic
+
+allow_remote_control yes
+font_size 17
+modify_font cell_height 180%
+modify_font strikethrough_position 150%
+
+hide_window_decorations titlebar-only
+wayland_titlebar_color background
+remember_window_size yes
+window_padding_width 0 10
+
+adjust_line_height 130%
+cursor_blink_interval 0
+enable_audio_bell no
+
+# BEGIN_KITTY_THEME
+include current-theme.conf
+# END_KITTY_THEME

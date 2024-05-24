@@ -15,6 +15,11 @@ module.exports = {
       "always-multiline",
     ],
 
+    "@stylistic/function-call-argument-newline": [
+      "warn",
+      "consistent",
+    ],
+
     // Enforce space after object key
     "@stylistic/key-spacing": [
       "warn",
@@ -25,9 +30,19 @@ module.exports = {
       "warn",
       {
         exceptions: {
-          ImportDeclaration : true,
-          VariableDeclarator: true,
+          ImportDeclaration  : true,
+          TSPropertySignature: true,
+          VariableDeclarator : true,
         },
+      },
+    ],
+
+    "@stylistic/padded-blocks": [
+      "warn",
+      {
+        blocks : "never",
+        classes : "always",
+        switches: "never",
       },
     ],
 
@@ -36,6 +51,8 @@ module.exports = {
       "error",
       "consistent-as-needed",
     ],
+
+    "@stylistic/type-annotation-spacing": ["warn"],
 
     // Enforces getter/setter pairs in objects
     "accessor-pairs": "off",

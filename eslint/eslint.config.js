@@ -36,9 +36,12 @@ module.exports = [
       globals: {
         FormData       : "readonly",
         URLSearchParams: "readonly",
+        fetch          : "readonly",
+        localStorage   : "readonly",
         module         : "readonly",
         process        : "readonly",
         require        : "readonly",
+        structuredClone: "readonly",
       },
     },
     plugins: {
