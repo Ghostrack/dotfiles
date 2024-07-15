@@ -54,9 +54,6 @@ return {
         oldfiles = {
           prompt_title = 'History',
         },
-        lsp_references = {
-          previewer = false,
-        },
         lsp_definitions = {
           previewer = false,
         },
