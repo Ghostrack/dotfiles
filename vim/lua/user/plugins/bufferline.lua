@@ -1,43 +1,63 @@
 return {
-  'akinsho/bufferline.nvim',
-  dependencies = 'nvim-tree/nvim-web-devicons',
-  opts = {
-    options = {
-      indicator = {
-        icon = ' ',
-      },
-      show_close_icon = false,
-      show_buffer_close_icons = false,
-      tab_size = 0,
-      max_name_length = 25,
-      offsets = {
-        {
-          filetype = 'neo-tree',
-          text = function()
-            return ' '..vim.fn.fnamemodify(vim.fn.getcwd(), ':~')
-          end,
-          highlight = 'StatusLineComment',
-          text_align = 'left',
-        },
-      },
-      hover = {
-        enabled = true,
-        delay = 0,
-        reveal = { "close" },
-      },
-      separator_style = 'slant',
-      modified_icon = '',
-      custom_areas = {
-        left = function()
-          return {
-            { text = '    ', fg = '#8fff6d' },
-          }
-        end,
-      },
-      diagnostics_indicator = function(count, level, diagnostics_dict, context)
-        local icon = level:match("error") and " " or " "
-        return icon .. count
-      end,
+  {
+    "akinsho/bufferline.nvim",
+    event = "VeryLazy",
+    keys = {
+      { "<S-h>", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev Buffer" },
+      { "<S-l>", "<cmd>BufferLineCycleNext<cr>", desc = "Next Buffer" },
+      { "[b", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev Buffer" },
+      { "]b", "<cmd>BufferLineCycleNext<cr>", desc = "Next Buffer" },
+      { "[B", "<cmd>BufferLineMovePrev<cr>", desc = "Move buffer prev" },
+      { "]B", "<cmd>BufferLineMoveNext<cr>", desc = "Move buffer next" },
     },
-  }
+    opts = {
+      options = {
+        always_show_bufferline = false,
+        close_command = function(n) Snacks.bufdelete(n) end,
+        diagnostics = "nvim_lsp",
+        diagnostics_indicator = function(_, _, diag)
+          local icons = {
+            Error = " ",
+            Warn  = " ",
+            Hint  = " ",
+            Info  = " ",
+          }
+          local ret = (diag.error and icons.Error .. diag.error .. " " or "")
+            .. (diag.warning and icons.Warn .. diag.warning or "")
+          return vim.trim(ret)
+        end,
+        get_element_icon = function(opts)
+          local icons = {
+            octo = "",
+          }
+          return icons[opts.filetype]
+        end,
+        indicator = {
+          style = "none",
+        },
+        offsets = {
+          {
+            filetype = "neo-tree",
+            text = "Neo-tree",
+            highlight = "Directory",
+            text_align = "left",
+          },
+        },
+        right_mouse_command = function(n) Snacks.bufdelete(n) end,
+        show_buffer_close_icons = false,
+        show_close_icon = false,
+      },
+    },
+    config = function(_, opts)
+      require("bufferline").setup(opts)
+      -- Fix bufferline when restoring a session
+      vim.api.nvim_create_autocmd({ "BufAdd", "BufDelete" }, {
+        callback = function()
+          vim.schedule(function()
+            pcall(nvim_bufferline)
+          end)
+        end,
+      })
+    end,
+  },
 }

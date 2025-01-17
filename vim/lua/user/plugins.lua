@@ -1,5 +1,6 @@
 -- Bootstrap Lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     "git",
@@ -10,12 +11,15 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
+
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-
   -- Color scheme
   { import = 'user.plugins.gruvbox' },
+
+  -- Misc QOL plugins
+  { import = 'user.plugins.snacks' },
 
   -- Commenting support.
   { import = 'user.plugins.vim-commentary' },
@@ -55,12 +59,6 @@ require("lazy").setup({
 
   -- Automatically add closing brackets, quotes, etc.
   { 'windwp/nvim-autopairs', config = true },
-
-  -- Add smooth scrolling to avoid jarring jumps
-  { 'karb94/neoscroll.nvim', config = true },
-
-  -- All closing buffers without closing the split window.
-  { import = 'user.plugins.bufdelete' },
 
   -- Split arrays and methods onto multiple lines, or join them back up.
   { import = 'user.plugins.treesj' },
@@ -117,9 +115,6 @@ require("lazy").setup({
   -- Colorize Hex Codes
   { import = 'user.plugins.colorizer' },
 
-  -- Show file and LSP context in a bar at the top of the screen.
-  { import = 'user.plugins.barbecue' },
-
   -- Virtual scrollbar
   { import = 'user.plugins.nvim-scrollbar' },
 
@@ -136,17 +131,4 @@ require("lazy").setup({
   change_detection = {
     notify = false,
   },
-  -- install = {
-  --   colorscheme = { "gruvbox-flat" },
-  -- },
 })
-
--- Better syntaxt highlighting
--- use('sheerun/vim-polyglot')
-
--- use({
---   "brenoprata10/nvim-highlight-colors",
---   config = function()
---     require("nvim-highlight-colors").setup()
---   end,
--- })

@@ -32,7 +32,12 @@ module.exports = {
       "error",
       {
         exceptions: [
+          "ActionIcon",
           "AppShell",
+          "Box",
+          "DateInput",
+          "FeatureSwitch",
+          "Image",
           "TextInput",
         ],
       },

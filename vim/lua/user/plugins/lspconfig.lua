@@ -5,7 +5,7 @@ return {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
     'b0o/schemastore.nvim',
-    { 'jose-elias-alvarez/null-ls.nvim', dependencies = 'nvim-lua/plenary.nvim' },
+    { 'nvimtools/none-ls.nvim', dependencies = 'nvimtools/none-ls-extras.nvim' },
     'jayp0521/mason-null-ls.nvim',
   },
   config = function()
@@ -69,7 +69,7 @@ return {
     require('lspconfig').volar.setup({ capabilities = capabilities })
 
     -- Javascript, Typescript
-    require('lspconfig').tsserver.setup({ capabilities = capabilities })
+    require('lspconfig').ts_ls.setup({ capabilities = capabilities })
 
     -- require('lspconfig').vtsls.setup({ capabilities = capabilities })
 
@@ -95,13 +95,47 @@ return {
 
     require('lspconfig').gdscript.setup({ capabilities = capabilities })
 
+    require'lspconfig'.lua_ls.setup {
+      on_init = function(client)
+        if client.workspace_folders then
+          local path = client.workspace_folders[1].name
+          if vim.loop.fs_stat(path..'/.luarc.json') or vim.loop.fs_stat(path..'/.luarc.jsonc') then
+            return
+          end
+        end
+
+        client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+          runtime = {
+            -- Tell the language server which version of Lua you're using
+            -- (most likely LuaJIT in the case of Neovim)
+            version = 'LuaJIT'
+          },
+          -- Make the server aware of Neovim runtime files
+          workspace = {
+            checkThirdParty = false,
+            library = {
+              vim.env.VIMRUNTIME
+              -- Depending on the usage, you might want to add additional paths here.
+              -- "${3rd}/luv/library"
+              -- "${3rd}/busted/library",
+            }
+            -- or pull in all of 'runtimepath'. NOTE: this is a lot slower and will cause issues when working on your own configuration (see https://github.com/neovim/nvim-lspconfig/issues/3189)
+            -- library = vim.api.nvim_get_runtime_file("", true)
+          }
+        })
+      end,
+      settings = {
+        Lua = {}
+      }
+    }
+
     -- null-ls
     local null_ls = require('null-ls')
     local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
     null_ls.setup({
       temp_dir = '/tmp',
       sources = {
-        null_ls.builtins.diagnostics.eslint_d.with({
+        require('none-ls.diagnostics.eslint_d').with({
           condition = function(utils)
             return utils.root_has_file({ '.eslintrc.js', 'eslint.config.js' })
           end,
@@ -126,7 +160,7 @@ return {
 
         null_ls.builtins.diagnostics.gdlint,
 
-        null_ls.builtins.formatting.eslint_d.with({
+        require('none-ls.formatting.eslint_d').with({
           condition = function(utils)
             return utils.root_has_file({ '.eslintrc.js', '.eslintrc.json', 'eslint.config.js' })
           end,
@@ -163,13 +197,13 @@ return {
     vim.keymap.set('n', '<Leader>d', '<cmd>lua vim.diagnostic.open_float()<CR>')
     vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
     vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>')
-    vim.keymap.set('n', 'gd', ':Telescope lsp_definitions<CR>')
-    vim.keymap.set('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>')
-    vim.keymap.set('n', 'gi', ':Telescope lsp_implementations<CR>')
-    vim.keymap.set('n', 'gr', ':Telescope lsp_references<CR>')
+    -- vim.keymap.set('n', 'gd', ':Telescope lsp_definitions<CR>')
+    -- vim.keymap.set('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>')
+    -- vim.keymap.set('n', 'gi', ':Telescope lsp_implementations<CR>')
+    -- vim.keymap.set('n', 'gr', ':Telescope lsp_references<CR>')
     vim.keymap.set('n', '<Leader>lr', ':LspRestart<CR>', { silent = true })
     vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
-    vim.keymap.set('n', '<Leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
+    -- vim.keymap.set('n', '<Leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
 
     -- Commands
     vim.api.nvim_create_user_command('Format', function() vim.lsp.buf.format({ timeout_ms = 5000 }) end, {})

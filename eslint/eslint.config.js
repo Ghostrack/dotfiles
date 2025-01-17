@@ -1,17 +1,17 @@
-const eslint           = require("@eslint/js");
-const nextPlugin       = require("@next/eslint-plugin-next");
-const reactHooksPlugin = require("eslint-plugin-react-hooks");
-const reactPlugin      = require("eslint-plugin-react");
-const stylisticPlugin  = require("@stylistic/eslint-plugin");
-const typescriptParser = require("@typescript-eslint/parser");
-const typescriptPlugin = require("@typescript-eslint/eslint-plugin");
-const unicornPlugin    = require("eslint-plugin-unicorn");
+import eslint           from "@eslint/js";
+import nextPlugin       from "@next/eslint-plugin-next";
+import reactHooksPlugin from "eslint-plugin-react-hooks";
+import reactPlugin      from "eslint-plugin-react";
+import stylisticPlugin  from "@stylistic/eslint-plugin";
+import typescriptParser from "@typescript-eslint/parser";
+import typescriptPlugin from "@typescript-eslint/eslint-plugin";
+import unicornPlugin    from "eslint-plugin-unicorn";
 
-const baseRulesOverrides       = require("./eslint.base.config.js");
-const reactRulesOverrides      = require("./eslint.react.config.js");
-const typescriptRulesOverrides = require("./eslint.typescript.config.js");
+import baseRulesOverrides       from "./eslint.base.config.js";
+import reactRulesOverrides      from "./eslint.react.config.js";
+import typescriptRulesOverrides from "./eslint.typescript.config.js";
 
-module.exports = [
+export default [
   {
     ignores: [
       "components/ui/*",
@@ -65,7 +65,10 @@ module.exports = [
           jsx: true,
         },
         ecmaVersion: "latest",
-        project    : "tsconfig.json",
+        project    : [
+          "./tsconfig.json",
+          "./packages/*/tsconfig.json",
+        ],
         sourceType : "module",
       },
     },

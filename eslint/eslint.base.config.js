@@ -154,6 +154,9 @@ module.exports = {
     // Allow ternary operator
     "no-ternary": "off",
 
+    // Handled by typescript compiler
+    "no-undef": "off",
+
     // Allow use of undefined
     "no-undefined": "off",
 
