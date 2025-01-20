@@ -1,20 +1,20 @@
 -- Bootstrap Lazy
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable",
+    'git',
+    'clone',
+    '--filter=blob:none',
+    'https://github.com/folke/lazy.nvim.git',
+    '--branch=stable',
     lazypath,
   })
 end
 
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
+require('lazy').setup({
   -- Color scheme
   { import = 'user.plugins.gruvbox' },
 
@@ -52,7 +52,7 @@ require("lazy").setup({
   { 'jessarcher/vim-heritage' },
 
   -- Text objects for HTML attributes.
-  { 'whatyouhide/vim-textobj-xmlattr', dependencies = 'kana/vim-textobj-user'  },
+  { 'whatyouhide/vim-textobj-xmlattr', dependencies = 'kana/vim-textobj-user' },
 
   -- Automatically set the working directory to the project root.
   { import = 'user.plugins.vim-rooter' },
@@ -122,7 +122,7 @@ require("lazy").setup({
   { import = 'user.plugins.illuminate' },
 
   -- Auto save
-  { "Pocco81/auto-save.nvim" },
+  { 'Pocco81/auto-save.nvim' },
 }, {
   checker = {
     enabled = true,
