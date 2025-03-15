@@ -1,10 +1,7 @@
-/* eslint-disable max-lines */
 const propertyNamesExceptions = "^(Location|Access-Control-Allow-Credentials|Access-Control-Allow-Origin|Content-Type)$";
 
 module.exports = {
-
   rules: {
-
     "@typescript-eslint/init-declarations": ["warn"],
 
     "@typescript-eslint/naming-convention": [
@@ -40,6 +37,13 @@ module.exports = {
         ],
         selector: "property",
       },
+      {
+        format: [
+          "camelCase",
+          "PascalCase",
+        ],
+        selector: "typeProperty",
+      },
     ],
 
     "@typescript-eslint/no-dynamic-delete": "off",
@@ -61,7 +65,5 @@ module.exports = {
     "init-declarations": "off",
 
     "no-unused-expressions": "off",
-
   },
-
 };

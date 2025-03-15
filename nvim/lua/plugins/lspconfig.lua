@@ -1,4 +1,9 @@
 return {
   "neovim/nvim-lspconfig",
-  opts = {},
+  opts = {
+    servers = {
+      gdscript = {},
+      gdshader_lsp = {},
+    }
+  },
 }

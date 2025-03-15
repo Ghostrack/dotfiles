@@ -1,107 +1,78 @@
-import eslint           from "@eslint/js";
-import nextPlugin       from "@next/eslint-plugin-next";
-import reactHooksPlugin from "eslint-plugin-react-hooks";
-import reactPlugin      from "eslint-plugin-react";
-import stylisticPlugin  from "@stylistic/eslint-plugin";
-import typescriptParser from "@typescript-eslint/parser";
-import typescriptPlugin from "@typescript-eslint/eslint-plugin";
-import unicornPlugin    from "eslint-plugin-unicorn";
+import { createConfigForNuxt } from "@nuxt/eslint-config";
+import eslint                  from "@eslint/js";
+import stylisticPlugin         from "@stylistic/eslint-plugin";
+import typescriptPlugin        from "typescript-eslint";
+import unicornPlugin           from "eslint-plugin-unicorn";
+import vuePlugin               from "eslint-plugin-vue";
 
 import baseRulesOverrides       from "./eslint.base.config.js";
-import reactRulesOverrides      from "./eslint.react.config.js";
 import typescriptRulesOverrides from "./eslint.typescript.config.js";
 
-export default [
-  {
-    ignores: [
-      "components/ui/*",
-      "lib/*",
-    ],
-  },
-  stylisticPlugin.configs["all-flat"],
+export default typescriptPlugin.config(
+  stylisticPlugin.configs.all,
   stylisticPlugin.configs.customize({
     arrowParens: true,
     braceStyle : "1tbs",
     quotes     : "double",
     semi       : true,
   }),
+  eslint.configs.all,
+  unicornPlugin.configs.all,
+  baseRulesOverrides,
   {
-    files: [
-      "**/*.js",
-      "**/*.jsx",
-      "**/*.ts",
-      "**/*.tsx",
+    extends: [
+      typescriptPlugin.configs.strictTypeChecked,
+      typescriptPlugin.configs.stylisticTypeChecked,
+      vuePlugin.configs["flat/recommended"],
     ],
     languageOptions: {
-      globals: {
-        FormData       : "readonly",
-        URLSearchParams: "readonly",
-        fetch          : "readonly",
-        localStorage   : "readonly",
-        module         : "readonly",
-        process        : "readonly",
-        require        : "readonly",
-        structuredClone: "readonly",
+      parserOptions: {
+        extraFileExtensions: [".vue"],
+        parser             : typescriptPlugin.parser,
+        project            : ["tsconfig.eslint.json"],
+        projectService     : true,
       },
     },
     plugins: {
-      unicorn: unicornPlugin,
+      "@typescript-eslint": typescriptPlugin.plugin,
     },
     rules: {
-      ...eslint.configs.all.rules,
-      ...unicornPlugin.configs.all.rules,
-      ...baseRulesOverrides.rules,
-    },
-  },
-  {
-    files: [
-      "**/*.ts",
-      "**/*.tsx",
-    ],
-    languageOptions: {
-      parser       : typescriptParser,
-      parserOptions: {
-        ecmaFeatures: {
-          jsx: true,
-        },
-        ecmaVersion: "latest",
-        project    : [
-          "./tsconfig.json",
-          "./packages/*/tsconfig.json",
-        ],
-        sourceType : "module",
-      },
-    },
-    plugins: { "@typescript-eslint": typescriptPlugin },
-    rules  : {
-      ...typescriptPlugin.configs.all.rules,
+      ...createConfigForNuxt({ features: { stylistic: true } }).rules,
       ...typescriptRulesOverrides.rules,
     },
   },
   {
-    files: [
-      "**/*.ts",
-      "**/*.tsx",
-    ],
-    plugins: {
-      "react"      : reactPlugin,
-      "react-hooks": reactHooksPlugin,
-    },
+    files: ["**/*test.ts"],
     rules: {
-      ...reactPlugin.configs.all.rules,
-      ...reactHooksPlugin.configs.recommended.rules,
-      ...reactRulesOverrides.rules,
+      "@typescript-eslint/no-magic-numbers": "off",
+      "id-length"                          : "off",
+      "max-statements"                     : "off",
     },
   },
-  {
-    files: [
-      "**/*.ts",
-      "**/*.tsx",
-    ],
-    plugins: { "@next/next": nextPlugin },
-    rules  : {
-      ...nextPlugin.configs.recommended.rules,
-      ...nextPlugin.configs["core-web-vitals"].rules,
-    },
-  },
-];
+  // {
+  //   files: [
+  //     "**/*.ts",
+  //     "**/*.tsx",
+  //   ],
+  //   plugins: {
+  //     "react"      : reactPlugin,
+  //     "react-hooks": reactHooksPlugin,
+  //   },
+  //   rules: {
+  //     ...reactPlugin.configs.all.rules,
+  //     ...reactHooksPlugin.configs.recommended.rules,
+  //     ...reactRulesOverrides.rules,
+  //   },
+  // },
+  // {
+  //   files: [
+  //     "**/*.ts",
+  //     "**/*.tsx",
+  //   ],
+  //   plugins: { "@next/next": nextPlugin },
+  //   rules  : {
+  //     ...nextPlugin.configs.recommended.rules,
+  //     ...nextPlugin.configs["core-web-vitals"].rules,
+  //   },
+  // },
+);

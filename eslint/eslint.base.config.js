@@ -137,7 +137,7 @@ module.exports = {
     ],
 
     // Allow capitalised name only for constructors, with exceptions
-    "new-cap": "error",
+    "new-cap": "off",
 
     // Disallow the use of alert, confirm and prompt.
     "no-alert": "error",
@@ -195,6 +195,12 @@ module.exports = {
       },
     ],
 
+    "unicorn/filename-case": [
+      "warn",
+      { case: "pascalCase" },
+    ],
+
+    "unicorn/prevent-abbreviations": "off",
   },
 
 };
